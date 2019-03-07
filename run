@@ -1,0 +1,6 @@
+docker run \
+-e RUNTIME_ENVIRONMENT=DEV \
+-e AWS_ACCOUNT_ID=12344555 \
+-e AWS_REGION=us-west-2 \
+-e BUILD_VERSION=0.1.0 \
+-p8080:8080 stockservice:v0.1.0 /opt/apps/stock-service/start.sh 
