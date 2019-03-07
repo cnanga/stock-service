@@ -19,6 +19,6 @@ export JAVA_HOME=/usr/lib/jvm
 export RUNTIME=$RUNTIME_ENVIRONMENT
 export BUILD_VERSION=$BUILD_VERSION
 
-JVM_ARGS="-Xmx${JVM_MEM} -XX:+PrintGCDateStamps -verbose:gc -Xloggc:/opt/apps/data-lake/service-gc.log -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=${WORKING_DIR} -Dcom.sun.management.jmxremote.port=8855 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
+JVM_ARGS="-Xmx${JVM_MEM} -XX:+PrintGCDateStamps -verbose:gc -Xloggc:${WORKING_DIR}/service-gc.log -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=${WORKING_DIR} -Dcom.sun.management.jmxremote.port=8855 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
 
 java ${JVM_ARGS} -DRUNTIME_ENVIRONMENT=${RUNTIME_ENVIRONMENT} -DACCOUNT_ID=${AWS_ACCOUNT_ID} -DAWS_REGION=${AWS_REGION} -jar $WORKING_DIR/gs-rest-service.jar
